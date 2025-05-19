@@ -12,9 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with: dotnet-version: '8.0.x' # Replace with your actual .NET version
+      #- name: Setup .NET
+        #uses: actions/setup-dotnet@v4
+        #with: dotnet-version: '8.0.x' # Replace with your actual .NET version
 
       #- name: Restore dependencies
         #run: dotnet restore
