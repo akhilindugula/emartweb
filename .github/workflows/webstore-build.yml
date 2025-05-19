@@ -24,3 +24,5 @@ jobs:
 
       - name: Publish the app
         run: dotnet publish --configuration Release --output ./publish
+
+
