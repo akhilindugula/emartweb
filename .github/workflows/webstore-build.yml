@@ -1,24 +1,27 @@
-#build Workflow
-
 name: webstore-build
 
 on:
-   workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
-     build:
-           name: 'Build and publish our app'
-           runs-on: ubuntu-latest
+  build:
+    name: 'Build and publish our app'
+    runs-on: ubuntu-latest
 
-steps:
-- name:  checkout
-  uses: actions/checkout@v3.5.3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.2.2
 
-- name:  restore
-  uses: dotnet restore
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x' # Replace with your actual .NET version
 
-- name:  checkout
-  uses: dotnet build --configuration release
+      - name: Restore dependencies
+        run: dotnet restore
 
-- name:  checkout
-  uses: dotnet publish --configuration publish
+      - name: Build the app
+        run: dotnet build --configuration Release
+
+      - name: Publish the app
+        run: dotnet publish --configuration Release --output ./publish
