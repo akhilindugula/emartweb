@@ -16,13 +16,12 @@ jobs:
         uses: actions/setup-dotnet@v4
         with: dotnet-version: '8.0.x' # Replace with your actual .NET version
 
-      - name: Restore dependencies
-        run: dotnet restore
+      #- name: Restore dependencies
+        #run: dotnet restore
 
-      - name: Build the app
-        run: dotnet build --configuration Release
+      #- name: Build the app
+        #run: dotnet build --configuration Release
 
-      - name: Publish the app
-        run: dotnet publish --configuration Release --output ./publish
+    
 
 
